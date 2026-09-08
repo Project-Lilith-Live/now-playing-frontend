@@ -44,7 +44,7 @@ import {Link} from "@heroui/link";
 const platformGroups = {
   domestic: ["netease", "qq", "kugou", "kuwo", "soda", "wesing"],
   foreign: ["spotify", "apple", "youtube"],
-  jukebox: ["miebo", "ayna", "huahua", "bq"],
+  jukebox: ["miebo", "ayna", "huahua", "bq", "lilith"],
   local: ["potplayer", "foobar", "aimp", "salt"],
   other: ["lx", "musicfree", "cider", "yesplay", "browser"],
 };
@@ -788,7 +788,7 @@ export default function GeneralSettingsPage() {
                 fullWidth={true}
                 radius="lg"
                 selectedKey={
-                  ["miebo", "ayna", "huahua", "bq"].includes(platform as string)
+                  ["miebo", "ayna", "huahua", "bq", "lilith"].includes(platform as string)
                     ? platform
                     : "none"
                 }
@@ -812,6 +812,11 @@ export default function GeneralSettingsPage() {
                 <Tab
                   key="bq"
                   title={<TabTitle icon={<img className="h-4.5" src="/assets/bq_icon.png" />} label="BQ点歌姬" />}
+                  onClick={changePlatform}
+                />
+                <Tab
+                  key="lilith"
+                  title={<TabTitle icon={<PlayCircleFilled style={{ fontSize: 18, color: "#ffffff" }} />} label="Lilith 点歌机" />}
                   onClick={changePlatform}
                 />
               </Tabs>
