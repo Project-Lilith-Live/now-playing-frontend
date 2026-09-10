@@ -9,42 +9,42 @@ html, body, #root {
 
 @font-face {
   font-family: 'JetBrainsMono';
-  src: url('/assets/JetBrainsMono-Regular.woff2') format('woff2');
+  src: url('/src/assets/JetBrainsMono-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url('/assets/poppins.regular.ttf') format('truetype');
+  src: url('/src/assets/poppins.regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url('/assets/poppins.semibold.ttf') format('truetype');
+  src: url('/src/assets/poppins.semibold.ttf') format('truetype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Poppins';
-  src: url('/assets/poppins.bold.ttf') format('truetype');
+  src: url('/src/assets/poppins.bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'SourceHanHeavyMin';
-  src: url('/assets/SourceHanSansCN-Heavy-min.ttf') format('truetype');
+  src: url('/src/assets/SourceHanSansCN-Heavy-min.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'DelaGothicOne';
-  src: url('/assets/DelaGothicOne-Regular-min.ttf') format('truetype');
+  src: url('/src/assets/DelaGothicOne-Regular-min.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

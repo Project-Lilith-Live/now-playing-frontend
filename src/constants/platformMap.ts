@@ -15,11 +15,11 @@ export const PLATFORM_MAP: Record<string, string> = {
   bq: "BQ点歌姬",
   aimp: "AIMP",
   youtube: "YouTube Music",
+  lilith: "Lilith 点歌机",
   miebo: "咩播",
   yesplay: "YesPlayMusic",
   cider: "Cider",
   wesing: "全民K歌",
   browser: "浏览器",
-  salt: "Salt Player",
-  lilith: "Lilith 点歌机"
+  salt: "Salt Player"
 };

@@ -288,78 +288,78 @@ export default function AboutPage() {
 
         {/* 关于软件 */}
         <div className="flex flex-col gap-4 font-poppins">
-          <h1 className="text-xl text-default-800 font-bold leading-9">
-            关于软件
-          </h1>
+          {/*<h1 className="text-xl text-default-800 font-bold leading-9">*/}
+          {/*  关于软件*/}
+          {/*</h1>*/}
 
           <div className="group relative inline-flex flex-row w-full max-w-full items-center justify-between gap-2 h-16">
             <div className="flex items-center text-foreground text-base gap-4">
-              <img height={48} src="/assets/nowplaying.ico" width={48} />
+              <img height={48} src="/src/assets/logo.png" width={48} />
               <div className="flex flex-col font-poppins gap-[2px]">
-                <span className="font-semibold">Now Playing</span>
+                <span className="font-semibold">Now Playing - Lilith 弹幕机版</span>
                 <span className="text-default-500 text-sm">
                   版本：{CURRENT_VERSION}
                 </span>
               </div>
             </div>
-            <Button
-              color="primary"
-              onPress={() => {
-                fetch("/api/version")
-                  .then((response) => {
-                    if (!response.ok) {
-                      throw new Error(
-                        `HTTP 响应错误！状态码：${response.status}`,
-                      );
-                    }
+            {/*<Button*/}
+            {/*  color="primary"*/}
+            {/*  onPress={() => {*/}
+            {/*    fetch("/api/version")*/}
+            {/*      .then((response) => {*/}
+            {/*        if (!response.ok) {*/}
+            {/*          throw new Error(*/}
+            {/*            `HTTP 响应错误！状态码：${response.status}`,*/}
+            {/*          );*/}
+            {/*        }*/}
 
-                    return response.json();
-                  })
-                  .then((data: VersionData) => {
-                    if (data.latestVersion) {
-                      if (versionCompare(data.latestVersion, CURRENT_VERSION) <= 0) {
-                        addToast({
-                          color: "success",
-                          title: "版本信息",
-                          description: "当前已是最新版本",
-                          timeout: 6000,
-                        });
-                      } else {
-                        addToast({
-                          color: "warning",
-                          title: "版本信息",
-                          description: `检测到新版本 ${data.latestVersion} 可用`,
-                          timeout: 6000,
-                          endContent: (
-                            <Button
-                              color="warning"
-                              size="sm"
-                              variant="solid"
-                              onPress={() => {
-                                closeAll();
-                                openExternalUrl(siteConfig.links.download);
-                              }}
-                            >
-                              下载
-                            </Button>
-                          ),
-                        });
-                      }
-                    }
-                  })
-                  .catch((error) => {
-                    console.error("获取版本信息出错:", error);
-                    addToast({
-                      title: "获取版本信息失败",
-                      description: error.message,
-                      color: "danger",
-                      timeout: 6000,
-                    });
-                  });
-              }}
-            >
-              检查更新
-            </Button>
+            {/*        return response.json();*/}
+            {/*      })*/}
+            {/*      .then((data: VersionData) => {*/}
+            {/*        if (data.latestVersion) {*/}
+            {/*          if (versionCompare(data.latestVersion, CURRENT_VERSION) <= 0) {*/}
+            {/*            addToast({*/}
+            {/*              color: "success",*/}
+            {/*              title: "版本信息",*/}
+            {/*              description: "当前已是最新版本",*/}
+            {/*              timeout: 6000,*/}
+            {/*            });*/}
+            {/*          } else {*/}
+            {/*            addToast({*/}
+            {/*              color: "warning",*/}
+            {/*              title: "版本信息",*/}
+            {/*              description: `检测到新版本 ${data.latestVersion} 可用`,*/}
+            {/*              timeout: 6000,*/}
+            {/*              endContent: (*/}
+            {/*                <Button*/}
+            {/*                  color="warning"*/}
+            {/*                  size="sm"*/}
+            {/*                  variant="solid"*/}
+            {/*                  onPress={() => {*/}
+            {/*                    closeAll();*/}
+            {/*                    openExternalUrl(siteConfig.links.download);*/}
+            {/*                  }}*/}
+            {/*                >*/}
+            {/*                  下载*/}
+            {/*                </Button>*/}
+            {/*              ),*/}
+            {/*            });*/}
+            {/*          }*/}
+            {/*        }*/}
+            {/*      })*/}
+            {/*      .catch((error) => {*/}
+            {/*        console.error("获取版本信息出错:", error);*/}
+            {/*        addToast({*/}
+            {/*          title: "获取版本信息失败",*/}
+            {/*          description: error.message,*/}
+            {/*          color: "danger",*/}
+            {/*          timeout: 6000,*/}
+            {/*        });*/}
+            {/*      });*/}
+            {/*  }}*/}
+            {/*>*/}
+            {/*  检查更新*/}
+            {/*</Button>*/}
           </div>
 
           <div className="group relative inline-flex flex-row w-full max-w-full items-center justify-between gap-2 h-16">
@@ -437,69 +437,69 @@ export default function AboutPage() {
             </Button>
           </div>
 
-          <div className="group relative inline-flex flex-row w-full max-w-full items-center justify-between gap-2 h-16">
-            <div className="flex flex-col gap-[2px]">
-              <span>开源地址</span>
-              <Link
-                className="text-color-desc text-sm cursor-pointer"
-                color="foreground"
-                onPress={() => {openExternalUrl(siteConfig.links.github);}}
-              >
-                {siteConfig.links.github}
-              </Link>
-            </div>
-            <GitHubButton
-              stars={socialInfo.githubStars}
-              onClick={() => {
-                openExternalUrl(siteConfig.links.github);
-              }}
-            />
-          </div>
+          {/*<div className="group relative inline-flex flex-row w-full max-w-full items-center justify-between gap-2 h-16">*/}
+          {/*  <div className="flex flex-col gap-[2px]">*/}
+          {/*    <span>开源地址</span>*/}
+          {/*    <Link*/}
+          {/*      className="text-color-desc text-sm cursor-pointer"*/}
+          {/*      color="foreground"*/}
+          {/*      onPress={() => {openExternalUrl(siteConfig.links.github);}}*/}
+          {/*    >*/}
+          {/*      {siteConfig.links.github}*/}
+          {/*    </Link>*/}
+          {/*  </div>*/}
+          {/*  <GitHubButton*/}
+          {/*    stars={socialInfo.githubStars}*/}
+          {/*    onClick={() => {*/}
+          {/*      openExternalUrl(siteConfig.links.github);*/}
+          {/*    }}*/}
+          {/*  />*/}
+          {/*</div>*/}
 
-          <div className="group relative inline-flex flex-row w-full max-w-full items-center justify-between gap-2 h-16">
-            <div className="flex flex-col gap-[2px]">
-              <span>社区交流</span>
-              <span className="text-color-desc text-sm">
-                加入交流群反馈使用体验与建议
-              </span>
-            </div>
-            <div className="flex gap-3">
-              <Tooltip
-                closeDelay={200}
-                content="极海HEX"
-                placement="left"
-                className="px-3 font-poppins"
-              >
-                <Button
-                  isIconOnly
-                  color="primary"
-                  variant="flat"
-                  onPress={() => {
-                    openExternalUrl(siteConfig.links.bilibili);
-                  }}
-                >
-                  <BilibiliIcon size={17} />
-                </Button>
-              </Tooltip>
-              <Tooltip
-                closeDelay={200}
-                content={socialInfo.qqGroupNumber}
-                placement="right"
-                className="px-3 font-poppins"
-              >
-                <Button
-                  isIconOnly
-                  color="primary"
-                  variant="flat"
-                  onPress={() => {
-                    openExternalUrl(socialInfo.qqGroupLink);
-                  }}
-                >
-                  <QqOutlined style={{ fontSize: "17px" }} />
-                </Button>
-              </Tooltip>
-            </div>
-          </div>
+          {/*<div className="group relative inline-flex flex-row w-full max-w-full items-center justify-between gap-2 h-16">*/}
+          {/*  <div className="flex flex-col gap-[2px]">*/}
+          {/*    <span>社区交流</span>*/}
+          {/*    <span className="text-color-desc text-sm">*/}
+          {/*      加入交流群反馈使用体验与建议*/}
+          {/*    </span>*/}
+          {/*  </div>*/}
+          {/*  <div className="flex gap-3">*/}
+          {/*    <Tooltip*/}
+          {/*      closeDelay={200}*/}
+          {/*      content="极海HEX"*/}
+          {/*      placement="left"*/}
+          {/*      className="px-3 font-poppins"*/}
+          {/*    >*/}
+          {/*      <Button*/}
+          {/*        isIconOnly*/}
+          {/*        color="primary"*/}
+          {/*        variant="flat"*/}
+          {/*        onPress={() => {*/}
+          {/*          openExternalUrl(siteConfig.links.bilibili);*/}
+          {/*        }}*/}
+          {/*      >*/}
+          {/*        <BilibiliIcon size={17} />*/}
+          {/*      </Button>*/}
+          {/*    </Tooltip>*/}
+          {/*    <Tooltip*/}
+          {/*      closeDelay={200}*/}
+          {/*      content={socialInfo.qqGroupNumber}*/}
+          {/*      placement="right"*/}
+          {/*      className="px-3 font-poppins"*/}
+          {/*    >*/}
+          {/*      <Button*/}
+          {/*        isIconOnly*/}
+          {/*        color="primary"*/}
+          {/*        variant="flat"*/}
+          {/*        onPress={() => {*/}
+          {/*          openExternalUrl(socialInfo.qqGroupLink);*/}
+          {/*        }}*/}
+          {/*      >*/}
+          {/*        <QqOutlined style={{ fontSize: "17px" }} />*/}
+          {/*      </Button>*/}
+          {/*    </Tooltip>*/}
+          {/*  </div>*/}
+          {/*</div>*/}
         </div>
 
         <Divider />

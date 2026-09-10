@@ -44,7 +44,7 @@ import {Link} from "@heroui/link";
 const platformGroups = {
   domestic: ["netease", "qq", "kugou", "kuwo", "soda", "wesing"],
   foreign: ["spotify", "apple", "youtube"],
-  jukebox: ["miebo", "ayna", "huahua", "bq", "lilith"],
+  jukebox: ["lilith", "miebo", "ayna", "huahua", "bq"],
   local: ["potplayer", "foobar", "aimp", "salt"],
   other: ["lx", "musicfree", "cider", "yesplay", "browser"],
 };
@@ -593,22 +593,22 @@ export default function GeneralSettingsPage() {
               >
                 <Tab
                   key="netease"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/netease_icon.png" />} label="网易云音乐" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/netease_icon.png" />} label="网易云音乐" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="qq"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/qq_icon.png" />} label="QQ音乐" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/qq_icon.png" />} label="QQ音乐" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="kugou"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/kugou_icon.png" />} label="酷狗音乐" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/kugou_icon.png" />} label="酷狗音乐" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="kuwo"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/kuwo_icon.png" />} label="酷我音乐" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/kuwo_icon.png" />} label="酷我音乐" />}
                   onClick={changePlatform}
                 />
               </Tabs>
@@ -631,12 +631,12 @@ export default function GeneralSettingsPage() {
               >
                 <Tab
                   key="wesing"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/wesing_icon.png" />} label="全民K歌" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/wesing_icon.png" />} label="全民K歌" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="soda"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/soda_icon.png" />} label="汽水音乐" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/soda_icon.png" />} label="汽水音乐" />}
                   onClick={changePlatform}
                 />
               </Tabs>
@@ -762,7 +762,7 @@ export default function GeneralSettingsPage() {
                 />
                 <Tab
                   key="apple"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/apple_icon.png" />} label="Apple Music" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/apple_icon.png" />} label="Apple Music" />}
                   onClick={changePlatform}
                 />
                 <Tab
@@ -788,37 +788,37 @@ export default function GeneralSettingsPage() {
                 fullWidth={true}
                 radius="lg"
                 selectedKey={
-                  ["miebo", "ayna", "huahua", "bq", "lilith"].includes(platform as string)
+                  ["lilith", ].includes(platform as string)
                     ? platform
                     : "none"
                 }
                 size="lg"
               >
                 <Tab
-                  key="miebo"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/miebo_icon.png" />} label="咩播" />}
-                  onClick={changePlatform}
-                />
-                <Tab
-                  key="ayna"
-                  title={<TabTitle icon={<TerminalSolid size={20} color="#ffffff" />} label="卡西米尔唱片机" />}
-                  onClick={changePlatform}
-                />
-                <Tab
-                  key="huahua"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/huahua_icon.png" />} label="花花直播助手" />}
-                  onClick={changePlatform}
-                />
-                <Tab
-                  key="bq"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/bq_icon.png" />} label="BQ点歌姬" />}
-                  onClick={changePlatform}
-                />
-                <Tab
                   key="lilith"
-                  title={<TabTitle icon={<PlayCircleFilled style={{ fontSize: 18, color: "#ffffff" }} />} label="Lilith 点歌机" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/lilith_icon.png" />} label="Lilith 点歌机" />}
                   onClick={changePlatform}
                 />
+                {/*<Tab*/}
+                {/*  key="miebo"*/}
+                {/*  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/miebo_icon.png" />} label="咩播" />}*/}
+                {/*  onClick={changePlatform}*/}
+                {/*/>*/}
+                {/*<Tab*/}
+                {/*  key="ayna"*/}
+                {/*  title={<TabTitle icon={<TerminalSolid size={20} color="#ffffff" />} label="卡西米尔唱片机" />}*/}
+                {/*  onClick={changePlatform}*/}
+                {/*/>*/}
+                {/*<Tab*/}
+                {/*  key="huahua"*/}
+                {/*  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/huahua_icon.png" />} label="花花直播助手" />}*/}
+                {/*  onClick={changePlatform}*/}
+                {/*/>*/}
+                {/*<Tab*/}
+                {/*  key="bq"*/}
+                {/*  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/bq_icon.png" />} label="BQ点歌姬" />}*/}
+                {/*  onClick={changePlatform}*/}
+                {/*/>*/}
               </Tabs>
             </div>
           </AnimatedRow>
@@ -850,17 +850,17 @@ export default function GeneralSettingsPage() {
                 />
                 <Tab
                   key="foobar"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/foobar_icon.png" />} label="Foobar2000" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/foobar_icon.png" />} label="Foobar2000" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="aimp"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/aimp_icon.png" />} label="AIMP" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/aimp_icon.png" />} label="AIMP" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="salt"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/salt_icon.png" />} label="Salt Player" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/salt_icon.png" />} label="Salt Player" />}
                   onClick={changePlatform}
                 />
               </Tabs>
@@ -889,22 +889,22 @@ export default function GeneralSettingsPage() {
               >
                 <Tab
                   key="lx"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/lx_icon.png" />} label="洛雪音乐" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/lx_icon.png" />} label="洛雪音乐" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="musicfree"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/musicfree_icon.png" />} label="MusicFree" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/musicfree_icon.png" />} label="MusicFree" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="cider"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/cider_icon.png" />} label="Cider" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/cider_icon.png" />} label="Cider" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="yesplay"
-                  title={<TabTitle icon={<img className="h-4.5" src="/assets/yesplay_icon.png" />} label="YesPlayMusic" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/yesplay_icon.png" />} label="YesPlayMusic" />}
                   onClick={changePlatform}
                 />
                 <Tab
@@ -938,135 +938,136 @@ export default function GeneralSettingsPage() {
 
         {/* 系统设置 */}
         <div className="flex flex-col gap-4 font-poppins">
-          <h1 className="text-xl text-default-800 font-bold leading-9">
-            系统设置
-          </h1>
+          {/*<h1 className="text-xl text-default-800 font-bold leading-9">*/}
+          {/*  系统设置*/}
+          {/*</h1>*/}
 
-          <h2 className="text-base text-default-800 font-bold leading-6">
-            启动选项
-          </h2>
-          {/* 自动打开主页 */}
-          <div className="group relative inline-flex flex-row w-full max-w-full items-center justify-between gap-2 p-0 h-16">
-            <div className="flex flex-col gap-[2px]">
-              <span>自动打开主页</span>
-              <span className="text-color-desc text-sm">
-                软件运行后自动显示主界面
-              </span>
-            </div>
-            <Switch
-              isSelected={autoLaunchHomePage}
-              onValueChange={(val) => {
-                setAutoLaunchHomePage(val);
-                saveSettings({ autoLaunchHomePage: val });
-              }}
-            />
-          </div>
-          {/* 开机自启 */}
-          <div className="group relative inline-flex flex-row w-full max-w-full items-center justify-between gap-2 p-0 h-16">
-            <div className="flex flex-col gap-[2px]">
-              <span>开机自启</span>
-              <span className="text-color-desc text-sm">
-                系统启动时自动运行软件
-              </span>
-            </div>
-            <Switch
-              isSelected={runAtStartup}
-              onValueChange={async (val) => {
-                setRunAtStartup(val);
-                saveSettings({ runAtStartup: val });
+          {/*<h2 className="text-base text-default-800 font-bold leading-6">*/}
+          {/*  启动选项*/}
+          {/*</h2>*/}
+          {/*/!* 自动打开主页 *!/*/}
+          {/*<div className="group relative inline-flex flex-row w-full max-w-full items-center justify-between gap-2 p-0 h-16">*/}
+          {/*  <div className="flex flex-col gap-[2px]">*/}
+          {/*    <span>自动打开主页</span>*/}
+          {/*    <span className="text-color-desc text-sm">*/}
+          {/*      软件运行后自动显示主界面*/}
+          {/*    </span>*/}
+          {/*  </div>*/}
+          {/*  <Switch*/}
+          {/*    isSelected={autoLaunchHomePage}*/}
+          {/*    onValueChange={(val) => {*/}
+          {/*      setAutoLaunchHomePage(val);*/}
+          {/*      saveSettings({ autoLaunchHomePage: val });*/}
+          {/*    }}*/}
+          {/*  />*/}
+          {/*</div>*/}
+          {/*/!* 开机自启 *!/*/}
+          {/*<div className="group relative inline-flex flex-row w-full max-w-full items-center justify-between gap-2 p-0 h-16">*/}
+          {/*  <div className="flex flex-col gap-[2px]">*/}
+          {/*    <span>开机自启</span>*/}
+          {/*    <span className="text-color-desc text-sm">*/}
+          {/*      系统启动时自动运行软件*/}
+          {/*    </span>*/}
+          {/*  </div>*/}
+          {/*  <Switch*/}
+          {/*    isSelected={runAtStartup}*/}
+          {/*    onValueChange={async (val) => {*/}
+          {/*      setRunAtStartup(val);*/}
+          {/*      saveSettings({ runAtStartup: val });*/}
 
-                if (val) {
-                  setTimeout(() => {
-                    onDesktopWidgetTipModalOpen();
-                  }, 500);
+          {/*      if (val) {*/}
+          {/*        setTimeout(() => {*/}
+          {/*          onDesktopWidgetTipModalOpen();*/}
+          {/*        }, 500);*/}
 
-                  try {
-                    await fetch("/api/system/enableRunAtStartup");
-                  } catch (err) {
-                    console.error("启用开机自启失败", err);
-                  }
-                } else {
-                  try {
-                    await fetch("/api/system/disableRunAtStartup");
-                  } catch (err) {
-                    console.error("禁用开机自启失败", err);
-                  }
-                }
-              }}
-            />
-          </div>
-          {/* 检查更新 */}
-          <div className="group relative flex flex-col w-full max-w-full gap-2 my-2">
-            <span className="flex items-center text-primary-900 text-xs font-bold cursor-default user-select-none">
-              检查更新
-            </span>
-            <Select
-              className="w-full font-poppins"
-              classNames={{
-                trigger: "cursor-pointer transition-background !duration-150",
-                innerWrapper: "pl-1",
-              }}
-              selectedKeys={updateCheckFreq}
-              size="lg"
-              onSelectionChange={(keys) => {
-                if (keys instanceof Set && keys.size > 0) {
-                  setUpdateCheckFreq(keys);
-                  saveSettings({ updateCheckFreq: Number(Array.from(keys)[0]) });
-                }
-              }}
-            >
-              <SelectItem
-                key="0"
-                className="h-11 mb-1 last:mb-0"
-                classNames={{
-                  base: "px-4",
-                  title: "text-base font-poppins",
-                }}
-              >
-                每次启动时
-              </SelectItem>
-              <SelectItem
-                key="1"
-                className="h-11 mb-1 last:mb-0"
-                classNames={{
-                  base: "px-4",
-                  title: "text-base font-poppins",
-                }}
-              >
-                每天
-              </SelectItem>
-              <SelectItem
-                key="3"
-                className="h-11 mb-1 last:mb-0"
-                classNames={{
-                  base: "px-4",
-                  title: "text-base font-poppins",
-                }}
-              >
-                每三天
-              </SelectItem>
-              <SelectItem
-                key="5"
-                className="h-11 mb-1 last:mb-0"
-                classNames={{
-                  base: "px-4",
-                  title: "text-base font-poppins",
-                }}
-              >
-                每五天
-              </SelectItem>
-              <SelectItem
-                key="7"
-                className="h-11 mb-1 last:mb-0"
-                classNames={{
-                  base: "px-4",
-                  title: "text-base font-poppins",
-                }}
-              >
-                每周
-              </SelectItem>
-            </Select>
-          </div>
+          {/*        try {*/}
+          {/*          await fetch("/api/system/enableRunAtStartup");*/}
+          {/*        } catch (err) {*/}
+          {/*          console.error("启用开机自启失败", err);*/}
+          {/*        }*/}
+          {/*      } else {*/}
+          {/*        try {*/}
+          {/*          await fetch("/api/system/disableRunAtStartup");*/}
+          {/*        } catch (err) {*/}
+          {/*          console.error("禁用开机自启失败", err);*/}
+          {/*        }*/}
+          {/*      }*/}
+          {/*    }}*/}
+          {/*  />*/}
+          {/*</div>*/}
+
+          {/*/!* 检查更新 *!/*/}
+          {/*<div className="group relative flex flex-col w-full max-w-full gap-2 my-2">*/}
+          {/*  <span className="flex items-center text-primary-900 text-xs font-bold cursor-default user-select-none">*/}
+          {/*    检查更新*/}
+          {/*  </span>*/}
+          {/*  <Select*/}
+          {/*    className="w-full font-poppins"*/}
+          {/*    classNames={{*/}
+          {/*      trigger: "cursor-pointer transition-background !duration-150",*/}
+          {/*      innerWrapper: "pl-1",*/}
+          {/*    }}*/}
+          {/*    selectedKeys={updateCheckFreq}*/}
+          {/*    size="lg"*/}
+          {/*    onSelectionChange={(keys) => {*/}
+          {/*      if (keys instanceof Set && keys.size > 0) {*/}
+          {/*        setUpdateCheckFreq(keys);*/}
+          {/*        saveSettings({ updateCheckFreq: Number(Array.from(keys)[0]) });*/}
+          {/*      }*/}
+          {/*    }}*/}
+          {/*  >*/}
+          {/*    <SelectItem*/}
+          {/*      key="0"*/}
+          {/*      className="h-11 mb-1 last:mb-0"*/}
+          {/*      classNames={{*/}
+          {/*        base: "px-4",*/}
+          {/*        title: "text-base font-poppins",*/}
+          {/*      }}*/}
+          {/*    >*/}
+          {/*      每次启动时*/}
+          {/*    </SelectItem>*/}
+          {/*    <SelectItem*/}
+          {/*      key="1"*/}
+          {/*      className="h-11 mb-1 last:mb-0"*/}
+          {/*      classNames={{*/}
+          {/*        base: "px-4",*/}
+          {/*        title: "text-base font-poppins",*/}
+          {/*      }}*/}
+          {/*    >*/}
+          {/*      每天*/}
+          {/*    </SelectItem>*/}
+          {/*    <SelectItem*/}
+          {/*      key="3"*/}
+          {/*      className="h-11 mb-1 last:mb-0"*/}
+          {/*      classNames={{*/}
+          {/*        base: "px-4",*/}
+          {/*        title: "text-base font-poppins",*/}
+          {/*      }}*/}
+          {/*    >*/}
+          {/*      每三天*/}
+          {/*    </SelectItem>*/}
+          {/*    <SelectItem*/}
+          {/*      key="5"*/}
+          {/*      className="h-11 mb-1 last:mb-0"*/}
+          {/*      classNames={{*/}
+          {/*        base: "px-4",*/}
+          {/*        title: "text-base font-poppins",*/}
+          {/*      }}*/}
+          {/*    >*/}
+          {/*      每五天*/}
+          {/*    </SelectItem>*/}
+          {/*    <SelectItem*/}
+          {/*      key="7"*/}
+          {/*      className="h-11 mb-1 last:mb-0"*/}
+          {/*      classNames={{*/}
+          {/*        base: "px-4",*/}
+          {/*        title: "text-base font-poppins",*/}
+          {/*      }}*/}
+          {/*    >*/}
+          {/*      每周*/}
+          {/*    </SelectItem>*/}
+          {/*  </Select>*/}
+          {/*</div>*/}
 
           <Divider />
 
@@ -1153,7 +1154,6 @@ export default function GeneralSettingsPage() {
                       {platformKeys.map((platformKey, index) => {
                         // 检查是否为最后一个元素，用于控制 margin
                         const isLast = index === platformKeys.length - 1;
-
                         return (
                           <SelectItem
                             key={platformKey}

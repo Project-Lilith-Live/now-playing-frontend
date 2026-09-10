@@ -67,7 +67,7 @@ function App() {
             <Route element={<ExtensionPage />} path="/extension" />
             <Route element={<WindowExtensionPage />} path="/extension/window" />
             <Route element={<PageDeploymentExtensionPage />} path="/extension/deployment" />
-            <Route element={<SponsorPage />} path="/sponsor" />
+            {/*<Route element={<SponsorPage />} path="/sponsor" />*/}
             <Route element={<AboutPage />} path="/about" />
           </Route>
           <Route>

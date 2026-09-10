@@ -17,6 +17,23 @@ declare module "react" {
 }
 
 declare global {
+  interface LilithFloatingWindowState {
+    open: boolean;
+    visible: boolean;
+    locked: boolean;
+  }
+
+  interface Window {
+    lilithFloatingWindows?: {
+      getState(key: string): Promise<LilithFloatingWindowState>;
+      show(key: string): Promise<void>;
+      hide(key: string): Promise<void>;
+      setLocked(key: string, locked: boolean): Promise<LilithFloatingWindowState>;
+      reset(key: string): Promise<LilithFloatingWindowState>;
+      close(key: string): Promise<void>;
+    };
+  }
+
   namespace JSX {
     interface IntrinsicElements {
       meshLineGeometry: any;

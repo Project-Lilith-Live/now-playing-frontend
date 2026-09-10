@@ -83,13 +83,13 @@ export const siteConfig = {
       icon: <Grid size={24} />,
       href: "/extension",
     },
-    {
-      key: "sponsor",
-      label: "赞助",
-      icon: <Heart size={24} />,
-      href: "/sponsor",
-      position: "bottom",
-    },
+    // {
+    //   key: "sponsor",
+    //   label: "赞助",
+    //   icon: <Heart size={24} />,
+    //   href: "/sponsor",
+    //   position: "bottom",
+    // },
     {
       key: "about",
       label: "关于",
