@@ -294,7 +294,7 @@ export default function AboutPage() {
 
           <div className="group relative inline-flex flex-row w-full max-w-full items-center justify-between gap-2 h-16">
             <div className="flex items-center text-foreground text-base gap-4">
-              <img height={48} src="/src/assets/logo.png" width={48} />
+              <img height={48} src="/assets/logo.png" width={48} />
               <div className="flex flex-col font-poppins gap-[2px]">
                 <span className="font-semibold">Now Playing - Lilith 弹幕机版</span>
                 <span className="text-default-500 text-sm">

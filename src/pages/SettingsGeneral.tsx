@@ -593,22 +593,22 @@ export default function GeneralSettingsPage() {
               >
                 <Tab
                   key="netease"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/netease_icon.png" />} label="网易云音乐" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/netease_icon.png" />} label="网易云音乐" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="qq"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/qq_icon.png" />} label="QQ音乐" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/qq_icon.png" />} label="QQ音乐" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="kugou"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/kugou_icon.png" />} label="酷狗音乐" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/kugou_icon.png" />} label="酷狗音乐" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="kuwo"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/kuwo_icon.png" />} label="酷我音乐" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/kuwo_icon.png" />} label="酷我音乐" />}
                   onClick={changePlatform}
                 />
               </Tabs>
@@ -631,12 +631,12 @@ export default function GeneralSettingsPage() {
               >
                 <Tab
                   key="wesing"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/wesing_icon.png" />} label="全民K歌" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/wesing_icon.png" />} label="全民K歌" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="soda"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/soda_icon.png" />} label="汽水音乐" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/soda_icon.png" />} label="汽水音乐" />}
                   onClick={changePlatform}
                 />
               </Tabs>
@@ -762,7 +762,7 @@ export default function GeneralSettingsPage() {
                 />
                 <Tab
                   key="apple"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/apple_icon.png" />} label="Apple Music" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/apple_icon.png" />} label="Apple Music" />}
                   onClick={changePlatform}
                 />
                 <Tab
@@ -796,12 +796,12 @@ export default function GeneralSettingsPage() {
               >
                 <Tab
                   key="lilith"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/lilith_icon.png" />} label="Lilith 点歌机" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/lilith_icon.png" />} label="Lilith 点歌机" />}
                   onClick={changePlatform}
                 />
                 {/*<Tab*/}
                 {/*  key="miebo"*/}
-                {/*  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/miebo_icon.png" />} label="咩播" />}*/}
+                {/*  title={<TabTitle icon={<img className="h-4.5" src="/assets/miebo_icon.png" />} label="咩播" />}*/}
                 {/*  onClick={changePlatform}*/}
                 {/*/>*/}
                 {/*<Tab*/}
@@ -811,12 +811,12 @@ export default function GeneralSettingsPage() {
                 {/*/>*/}
                 {/*<Tab*/}
                 {/*  key="huahua"*/}
-                {/*  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/huahua_icon.png" />} label="花花直播助手" />}*/}
+                {/*  title={<TabTitle icon={<img className="h-4.5" src="/assets/huahua_icon.png" />} label="花花直播助手" />}*/}
                 {/*  onClick={changePlatform}*/}
                 {/*/>*/}
                 {/*<Tab*/}
                 {/*  key="bq"*/}
-                {/*  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/bq_icon.png" />} label="BQ点歌姬" />}*/}
+                {/*  title={<TabTitle icon={<img className="h-4.5" src="/assets/bq_icon.png" />} label="BQ点歌姬" />}*/}
                 {/*  onClick={changePlatform}*/}
                 {/*/>*/}
               </Tabs>
@@ -850,17 +850,17 @@ export default function GeneralSettingsPage() {
                 />
                 <Tab
                   key="foobar"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/foobar_icon.png" />} label="Foobar2000" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/foobar_icon.png" />} label="Foobar2000" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="aimp"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/aimp_icon.png" />} label="AIMP" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/aimp_icon.png" />} label="AIMP" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="salt"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/salt_icon.png" />} label="Salt Player" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/salt_icon.png" />} label="Salt Player" />}
                   onClick={changePlatform}
                 />
               </Tabs>
@@ -889,22 +889,22 @@ export default function GeneralSettingsPage() {
               >
                 <Tab
                   key="lx"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/lx_icon.png" />} label="洛雪音乐" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/lx_icon.png" />} label="洛雪音乐" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="musicfree"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/musicfree_icon.png" />} label="MusicFree" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/musicfree_icon.png" />} label="MusicFree" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="cider"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/cider_icon.png" />} label="Cider" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/cider_icon.png" />} label="Cider" />}
                   onClick={changePlatform}
                 />
                 <Tab
                   key="yesplay"
-                  title={<TabTitle icon={<img className="h-4.5" src="/src/assets/yesplay_icon.png" />} label="YesPlayMusic" />}
+                  title={<TabTitle icon={<img className="h-4.5" src="/assets/yesplay_icon.png" />} label="YesPlayMusic" />}
                   onClick={changePlatform}
                 />
                 <Tab

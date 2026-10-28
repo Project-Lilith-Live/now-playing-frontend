@@ -31,6 +31,7 @@ declare global {
       setLocked(key: string, locked: boolean): Promise<LilithFloatingWindowState>;
       reset(key: string): Promise<LilithFloatingWindowState>;
       close(key: string): Promise<void>;
+      onStateChanged(listener: () => void): () => void;
     };
   }
 

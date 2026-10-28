@@ -64,6 +64,10 @@ export default function DesktopSettingsPage() {
     })();
     void refreshWidgetState();
     void refreshLyricState();
+    return floatingWindows?.onStateChanged(() => {
+      void refreshWidgetState();
+      void refreshLyricState();
+    });
   }, []);
 
   return (

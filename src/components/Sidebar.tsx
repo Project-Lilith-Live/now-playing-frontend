@@ -8,7 +8,7 @@ import { siteConfig } from "@/constants/site";
 import { NavItem } from "@/types/nav";
 import { useOpenExternalUrl } from "@/hooks/useOpenExternalUrl";
 
-const AppSidebarIcon = "/src/assets/logo.png";
+const AppSidebarIcon = "/assets/logo.png";
 
 const MobileNavbar = memo(
   ({

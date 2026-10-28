@@ -146,7 +146,7 @@ export const ColorPalette: React.FC<ColorPaletteProps> = ({ color, onChange, cla
           >
             {isSelected && (
               <p style={{ color: "white", filter: "drop-shadow(rgb(255, 255, 255) 0px 0px 5px)" }}>
-                <img src="/src/assets/checkmark-38b076ff.svg" className="w-5" alt="checkmark" />
+                <img src="/assets/checkmark-38b076ff.svg" className="w-5" alt="checkmark" />
               </p>
             )}
           </div>
@@ -161,7 +161,7 @@ export const ColorPalette: React.FC<ColorPaletteProps> = ({ color, onChange, cla
             }}
           >
             <img
-              src="/src/assets/color-picker-2b4da951.svg"
+              src="/assets/color-picker-2b4da951.svg"
               className="pointer-events-none absolute z-40 h-5 w-5"
               alt="color-picker-icon"
               style={{ filter: "drop-shadow(rgb(0, 0, 0) 0px 0px 4px)" }}

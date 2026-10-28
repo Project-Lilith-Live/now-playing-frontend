@@ -387,7 +387,7 @@ export default function LyricSettingsPage() {
                       key="netease"
                       title={
                         <div className="flex items-center justify-center space-x-2 w-[100px]">
-                          <img src="/src/assets/netease_icon.png" className="h-4.5" />
+                          <img src="/assets/netease_icon.png" className="h-4.5" />
                           <span className="font-poppins">网易云音乐</span>
                         </div>
                       }
@@ -396,7 +396,7 @@ export default function LyricSettingsPage() {
                       key="qq"
                       title={
                         <div className="flex items-center justify-center space-x-2 w-[80px]">
-                          <img src="/src/assets/qq_icon.png" className="h-4.5" />
+                          <img src="/assets/qq_icon.png" className="h-4.5" />
                           <span className="font-poppins">QQ音乐</span>
                         </div>
                       }
