@@ -21,5 +21,6 @@ export const PLATFORM_MAP: Record<string, string> = {
   cider: "Cider",
   wesing: "全民K歌",
   browser: "浏览器",
-  salt: "Salt Player"
+  salt: "Salt Player",
+  "splayer-next": "SPlayer Next"
 };
