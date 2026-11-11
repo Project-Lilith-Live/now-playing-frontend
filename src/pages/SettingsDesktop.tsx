@@ -10,6 +10,7 @@ import {
 } from "@mynaui/icons-react";
 import { Link } from "@heroui/link";
 import { Spacer } from "@heroui/spacer";
+import { Button } from "@heroui/button";
 import { useOpenExternalUrl } from "@/hooks/useOpenExternalUrl";
 
 interface OsBitResponse {
@@ -19,6 +20,29 @@ interface OsBitResponse {
 export default function DesktopSettingsPage() {
   const [osBitNumber, setOsBitNumber] = useState<number>(64);
   const { openExternalUrl } = useOpenExternalUrl();
+  const [widgetState, setWidgetState] = useState({
+    open: false,
+    visible: false,
+    locked: true,
+  });
+  const [lyricState, setLyricState] = useState({
+    open: false,
+    visible: false,
+    locked: true,
+  });
+  const floatingWindows = window.lilithFloatingWindows;
+
+  const refreshWidgetState = async () => {
+    if (floatingWindows) {
+      setWidgetState(await floatingWindows.getState("nps:widget"));
+    }
+  };
+
+  const refreshLyricState = async () => {
+    if (floatingWindows) {
+      setLyricState(await floatingWindows.getState("nps:lyric"));
+    }
+  };
 
   useEffect(() => {
     (async () => {
@@ -38,6 +62,12 @@ export default function DesktopSettingsPage() {
         console.log("获取系统信息失败：" + error.message);
       }
     })();
+    void refreshWidgetState();
+    void refreshLyricState();
+    return floatingWindows?.onStateChanged(() => {
+      void refreshWidgetState();
+      void refreshLyricState();
+    });
   }, []);
 
   return (
@@ -50,12 +80,100 @@ export default function DesktopSettingsPage() {
           <h1 className="text-xl text-default-800 font-bold leading-9">
             打开方式
           </h1>
-          <p>在软件托盘图标的右键菜单中启用并管理桌面组件</p>
+          <p>
+            {floatingWindows
+              ? "在当前页面统一管理桌面组件的显示、锁定和位置"
+              : "在软件托盘图标的右键菜单中启用并管理桌面组件"}
+          </p>
           <Image
             alt="桌面组件帮助"
             src="/assets/desktop-widget-help.png"
             width={256}
           />
+          {floatingWindows && (
+            <div className="flex flex-wrap gap-2 rounded-xl border border-default-200 bg-default-50/40 p-4">
+              <h2 className="w-full text-base font-semibold">播放器组件</h2>
+              <Button color="primary" onPress={async () => {
+                if (widgetState.visible) {
+                  await floatingWindows.hide("nps:widget");
+                } else {
+                  await floatingWindows.show("nps:widget");
+                }
+                await refreshWidgetState();
+              }}>
+                {widgetState.visible
+                  ? "隐藏组件"
+                  : widgetState.open
+                    ? "显示组件"
+                    : "启动组件"}
+              </Button>
+              <Button variant="flat" isDisabled={!widgetState.open} onPress={async () => {
+                await floatingWindows.setLocked("nps:widget", !widgetState.locked);
+                await refreshWidgetState();
+              }}>
+                {widgetState.locked ? "解锁交互" : "锁定并穿透"}
+              </Button>
+              <Button variant="flat" onPress={async () => {
+                await floatingWindows.reset("nps:widget");
+                await refreshWidgetState();
+              }}>
+                重置位置
+              </Button>
+              <Button color="danger" variant="flat" isDisabled={!widgetState.open} onPress={async () => {
+                await floatingWindows.close("nps:widget");
+                await refreshWidgetState();
+              }}>
+                关闭组件
+              </Button>
+              <p className="w-full text-sm text-default-500">
+                {widgetState.locked
+                  ? "当前已锁定并启用鼠标穿透。请先解锁，再移动或缩放组件。"
+                  : "当前已解锁。可拖动顶部控制区域或拖拽窗口边缘调整大小。"}
+              </p>
+            </div>
+          )}
+          {floatingWindows && (
+            <div className="flex flex-wrap gap-2 rounded-xl border border-default-200 bg-default-50/40 p-4">
+              <h2 className="w-full text-base font-semibold">歌词组件</h2>
+              <Button color="primary" onPress={async () => {
+                if (lyricState.visible) {
+                  await floatingWindows.hide("nps:lyric");
+                } else {
+                  await floatingWindows.show("nps:lyric");
+                }
+                await refreshLyricState();
+              }}>
+                {lyricState.visible
+                  ? "隐藏歌词"
+                  : lyricState.open
+                    ? "显示歌词"
+                    : "启动歌词"}
+              </Button>
+              <Button variant="flat" isDisabled={!lyricState.open} onPress={async () => {
+                await floatingWindows.setLocked("nps:lyric", !lyricState.locked);
+                await refreshLyricState();
+              }}>
+                {lyricState.locked ? "解锁交互" : "锁定并穿透"}
+              </Button>
+              <Button variant="flat" onPress={async () => {
+                await floatingWindows.reset("nps:lyric");
+                await refreshLyricState();
+              }}>
+                重置位置
+              </Button>
+              <Button color="danger" variant="flat" isDisabled={!lyricState.open} onPress={async () => {
+                await floatingWindows.close("nps:lyric");
+                await refreshLyricState();
+              }}>
+                关闭歌词
+              </Button>
+              <p className="w-full text-sm text-default-500">
+                {lyricState.locked
+                  ? "歌词窗口已锁定并启用鼠标穿透。"
+                  : "歌词窗口已解锁，可移动或缩放。"}
+              </p>
+            </div>
+          )}
         </div>
 
         <Divider />

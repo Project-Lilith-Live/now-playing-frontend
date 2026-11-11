@@ -86,93 +86,93 @@ export default function IndexPage() {
     onOpenChange: onAnnouncementModalOpenChange,
   } = useDisclosure();
 
-  // 获取公告信息
-  useEffect(() => {
-    // 只有当 URL 有 showAnnouncement 参数时才获取公告
-    if (!showAnnouncement) {
-      return;
-    }
-
-    const fetchAnnouncementInfo = async () => {
-      try {
-        let data: AnnouncementData;
-
-        if (IS_ANNOUNCEMENT_TEST_MODE) {
-          // 测试模式：直接使用本地 JSON 文件作为响应结果
-          data = testAnnouncementData as unknown as AnnouncementData;
-        } else {
-          // 正常模式：向后端发送请求
-          const response = await fetch("/api/announcement");
-          if (!response.ok) {
-            throw new Error("公告信息获取失败");
-          }
-          data = await response.json();
-        }
-
-        setAnnouncementInfo({
-          title: data.title,
-          timestamp: data.timestamp,
-          content: data.content,
-          expireDays: data.expireDays,
-        });
-
-        // 弹出公告模态框
-        onAnnouncementModalOpen();
-      } catch (error) {
-        console.error("获取公告信息出错:", error);
-      }
-    };
-
-    fetchAnnouncementInfo();
-  }, [showAnnouncement]);
-
-  // 获取版本信息
-  useEffect(() => {
-    // 如果 URL 有 showAnnouncement 参数，需要等待公告模态框关闭后才获取版本信息
-    if (showAnnouncement && !announcementClosed) {
-      return;
-    }
-
-    const fetchVersionInfo = async () => {
-      try {
-        let data: VersionData;
-
-        if (IS_VERSION_TEST_MODE) {
-          // 测试模式：直接使用本地 JSON 文件作为响应结果
-          data = testVersionData as unknown as VersionData;
-        } else {
-          // 正常模式：向后端发送请求
-          const response = await fetch("/api/version");
-          if (!response.ok) {
-            throw new Error("版本信息获取失败");
-          }
-          data = await response.json();
-        }
-
-        if (data.latestVersion) {
-          const isLatest =
-            versionCompare(data.latestVersion, CURRENT_VERSION) <= 0;
-
-          setVersionInfo({
-            current: CURRENT_VERSION,
-            latest: data.latestVersion,
-            updateLog: data.updateLog,
-            isLatest,
-            latestTimestamp: data.timestamp,
-          });
-
-          // 如果当前版本不是最新，且 URL 有 showUpdate 参数，则弹出更新模态框
-          if (!isLatest && showUpdate) {
-            onUpdateModalOpen();
-          }
-        }
-      } catch (error) {
-        console.error("获取版本信息出错:", error);
-      }
-    };
-
-    fetchVersionInfo();
-  }, [showAnnouncement, announcementClosed]);
+  // // 获取公告信息
+  // useEffect(() => {
+  //   // 只有当 URL 有 showAnnouncement 参数时才获取公告
+  //   if (!showAnnouncement) {
+  //     return;
+  //   }
+  //
+  //   const fetchAnnouncementInfo = async () => {
+  //     try {
+  //       let data: AnnouncementData;
+  //
+  //       if (IS_ANNOUNCEMENT_TEST_MODE) {
+  //         // 测试模式：直接使用本地 JSON 文件作为响应结果
+  //         data = testAnnouncementData as unknown as AnnouncementData;
+  //       } else {
+  //         // 正常模式：向后端发送请求
+  //         const response = await fetch("/api/announcement");
+  //         if (!response.ok) {
+  //           throw new Error("公告信息获取失败");
+  //         }
+  //         data = await response.json();
+  //       }
+  //
+  //       setAnnouncementInfo({
+  //         title: data.title,
+  //         timestamp: data.timestamp,
+  //         content: data.content,
+  //         expireDays: data.expireDays,
+  //       });
+  //
+  //       // 弹出公告模态框
+  //       onAnnouncementModalOpen();
+  //     } catch (error) {
+  //       console.error("获取公告信息出错:", error);
+  //     }
+  //   };
+  //
+  //   fetchAnnouncementInfo();
+  // }, [showAnnouncement]);
+  //
+  // // 获取版本信息
+  // useEffect(() => {
+  //   // 如果 URL 有 showAnnouncement 参数，需要等待公告模态框关闭后才获取版本信息
+  //   if (showAnnouncement && !announcementClosed) {
+  //     return;
+  //   }
+  //
+  //   const fetchVersionInfo = async () => {
+  //     try {
+  //       let data: VersionData;
+  //
+  //       if (IS_VERSION_TEST_MODE) {
+  //         // 测试模式：直接使用本地 JSON 文件作为响应结果
+  //         data = testVersionData as unknown as VersionData;
+  //       } else {
+  //         // 正常模式：向后端发送请求
+  //         const response = await fetch("/api/version");
+  //         if (!response.ok) {
+  //           throw new Error("版本信息获取失败");
+  //         }
+  //         data = await response.json();
+  //       }
+  //
+  //       if (data.latestVersion) {
+  //         const isLatest =
+  //           versionCompare(data.latestVersion, CURRENT_VERSION) <= 0;
+  //
+  //         setVersionInfo({
+  //           current: CURRENT_VERSION,
+  //           latest: data.latestVersion,
+  //           updateLog: data.updateLog,
+  //           isLatest,
+  //           latestTimestamp: data.timestamp,
+  //         });
+  //
+  //         // 如果当前版本不是最新，且 URL 有 showUpdate 参数，则弹出更新模态框
+  //         if (!isLatest && showUpdate) {
+  //           onUpdateModalOpen();
+  //         }
+  //       }
+  //     } catch (error) {
+  //       console.error("获取版本信息出错:", error);
+  //     }
+  //   };
+  //
+  //   fetchVersionInfo();
+  // }, [showAnnouncement, announcementClosed]);
 
   // 进入设置页面
   const jumpToSettings = () => {
@@ -364,9 +364,9 @@ export default function IndexPage() {
                         />
                       </div>
 
-                      <div className="flex items-center justify-between">
+                      <div className="flex flex-col items-center">
                         <h2
-                          className="inline-block font-sourcehan text-center text-3xl lg:text-4xl md:text-3xl"
+                          className="font-sourcehan text-center text-3xl lg:text-4xl md:text-3xl"
                           id="title"
                         >
                           欢迎使用
@@ -413,19 +413,17 @@ export default function IndexPage() {
                         id="current-version-div"
                         style={{ marginBottom: "0.2rem" }}
                       >
-                        版本号：{versionInfo.current}
+                        版本号：{versionInfo.current} (Lilith 弹幕机 修改版本)
                       </div>
                       <div className="font-poppins" id="update-text">
-                        {versionInfo.isLatest ? (
-                          "当前已是最新版本"
-                        ) : versionInfo.latest ? (
+                        {versionInfo.latest && (
                           <a
                             className="cursor-pointer"
                             onClick={() => {openExternalUrl("https://gitee.com/widdit/now-playing/releases");}}
                           >
-                            检测到新版本可用：{versionInfo.latest}
+                            新版本可用：{versionInfo.latest}
                           </a>
-                        ) : null}
+                        )}
                       </div>
                     </div>
                   </div>

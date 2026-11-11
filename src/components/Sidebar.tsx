@@ -8,7 +8,7 @@ import { siteConfig } from "@/constants/site";
 import { NavItem } from "@/types/nav";
 import { useOpenExternalUrl } from "@/hooks/useOpenExternalUrl";
 
-const AppSidebarIcon = "/assets/now_playing_sidebar_icon.png";
+const AppSidebarIcon = "/assets/logo.png";
 
 const MobileNavbar = memo(
   ({
@@ -137,7 +137,7 @@ export const Sidebar: React.FC = () => {
           {/* 软件图标 */}
           <div className="flex flex-col relative top-4 items-center mb-14">
             <a href="/">
-              <img className="h-6" src={AppSidebarIcon} />
+              <img className="h-16" src={AppSidebarIcon} />
             </a>
           </div>
 
